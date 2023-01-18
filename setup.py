@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'docxtopdf',
-    version = '0.3b',
+    version = '0.5b',
     author = 'MrPowerUp',
     author_email = 'gustavohenrique8282@hotmail.com',
     packages = ['docxtopdf'],

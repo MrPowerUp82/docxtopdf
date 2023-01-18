@@ -18,7 +18,10 @@ if args.output and args.docx:
         word = win32com.client.Dispatch("Word.application")
 
         try:
-            wordDoc = word.Documents.Open(args.docx, False, False, False)
+            if "/" in args.docx or "\\" in args.docx:
+                wordDoc = word.Documents.Open(args.docx, False, False, False)
+            else:
+                wordDoc = word.Documents.Open(os.getcwd()+'\\'+args.docx, False, False, False)
             if "/" in args.output or "\\" in args.output:
                 wordDoc.SaveAs2(args.output, FileFormat = 17)
             else:
@@ -44,4 +47,7 @@ if args.output and args.docx:
         print('Sistema desconhecido.')
 
 else:
-    print('__main__.py --help')
+    print('docxtopdf --help')
+    print('\nExemplos:')
+    print(r'docxtopdf --docx "C:\Users\MrPowerUp\Downloads\1997.docx" --output "C:\Users\MrPowerUp\Downloads\1997.pdf" --debug True')
+    print(r'docxtopdf --docx "RPG.docx" --output "RPG.pdf" --debug True')

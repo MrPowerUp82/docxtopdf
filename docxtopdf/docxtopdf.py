@@ -8,7 +8,10 @@ def convert(docx_file: str, output_pdf: str, debug: bool=False)->None:
         word = win32com.client.Dispatch("Word.application")
 
         try:
-            wordDoc = word.Documents.Open(docx_file, False, False, False)
+            if "/" in docx_file or "\\" in docx_file:
+                wordDoc = word.Documents.Open(docx_file, False, False, False)
+            else:
+                wordDoc = word.Documents.Open(os.getcwd()+'\\'+docx_file, False, False, False)
             if "/" in output_pdf or "\\" in output_pdf:
                 wordDoc.SaveAs2(output_pdf, FileFormat = 17)
             else:
