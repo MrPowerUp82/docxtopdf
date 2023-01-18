@@ -1,19 +1,19 @@
 from setuptools import setup
 
 setup(
-    name = 'hqdragondownload',
-    version = '1.1.0',
+    name = 'docxtopdf',
+    version = '0.3b',
     author = 'MrPowerUp',
     author_email = 'gustavohenrique8282@hotmail.com',
-    packages = ['hqdragon'],
-    description = 'CLI para baixar hqs no site.',
-    long_description = 'CLI para baixar hqs no site.',
-    url = 'https://github.com/MrPowerUp82/hqdragondownload',
+    packages = ['docxtopdf'],
+    description = 'CLI e Lib.',
+    long_description = 'CLI e Lib.',
+    url = 'https://github.com/MrPowerUp82/docxtopdf',
     project_urls = {
-        'Código fonte': 'https://github.com/MrPowerUp82/hqdragondownload',
+        'Código fonte': 'https://github.com/MrPowerUp82/docxtopdf',
     },
     license = 'MIT',
-    keywords = 'CLI hqdragon HQ',
+    keywords = 'CLI Lib docxtopdf',
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -23,5 +23,5 @@ setup(
         'Topic :: Software Development :: Internationalization',
         'Topic :: Scientific/Engineering :: Physics'
     ],
-    install_requires=['lxml==4.8.0','requests==2.27.1','fpdf==1.7.2']
+    install_requires=[]
 )
